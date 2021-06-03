@@ -1,6 +1,8 @@
 package xyz.n7mn.dev.survivalplugin.command;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -10,6 +12,7 @@ import xyz.n7mn.dev.survivalplugin.data.PlayerLocationData;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MainCommand implements CommandExecutor {
 
@@ -41,7 +44,9 @@ public class MainCommand implements CommandExecutor {
                 }
             }
 
-            player.sendMessage(ChatColor.YELLOW + "[ななみ生活鯖] " + ChatColor.RESET + " なにやらおかしなことになっているようです。運営にお願いしてください。");
+            player.sendMessage(ChatColor.YELLOW + "[ななみ生活鯖] " + ChatColor.RESET + " 何らかの原因で位置の保存が消えたようです！");
+            player.sendMessage(ChatColor.YELLOW + "[ななみ生活鯖] " + ChatColor.RESET + " メインワールドにテレポートされます。");
+            player.teleport(Objects.requireNonNull(Bukkit.getWorld("world")).getSpawnLocation());
 
         }
 
