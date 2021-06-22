@@ -38,3 +38,8 @@ commands:
   unlock:
     usage: '/unlock'
     description: ''
+
+  de:
+    usage: '/de'
+    description: ''
+    permission: '7miseikatu.op'
